@@ -1,0 +1,20 @@
+{
+  "short_name": "Gama Bank",
+  "name": "Gama Bank",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#8C52E5",
+  "background_color": "#8C52E5"
+}
