@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 //
 import Landing from "../views/pages/Landing";
 import Login from "../views/pages/Login";
+import Dashboard from "../views/pages/Dashboard";
 import ForgotPasswd from "../views/pages/ForgotPasswd";
 
 const Routes: React.FC = () => (
@@ -10,8 +11,7 @@ const Routes: React.FC = () => (
     <Route exact path="/" component={Landing} />
     <Route path="/login" component={Login} />
     <Route path="/forgot-passwd" component={ForgotPasswd} />
-
-    {/* <Route path="/dashboard" component={Dashboard} isPrivate /> */}
+    <Route path="/dashboard" component={Dashboard} isPrivate />
   </Switch>
 );
 
