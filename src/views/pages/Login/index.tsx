@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 //
 import * as S from "./styles";
 import WhiteCard from "../../components/WhiteCard";
@@ -9,8 +10,8 @@ const Login: React.FC = () => {
     <S.Container>
       <WhiteCard title="Faça seu login" _width="25%">
         <LoginForm />
-        <a href="/passwd-reset">Esqueci a senha {">"}</a>
-        <a href="/passwd-reset">Ainda não sou cliente {">"}</a>
+        <Link to="/forgot-passwd">Esqueci a senha {">"}</Link>
+        <Link to="/">Ainda não sou cliente {">"}</Link>
       </WhiteCard>
     </S.Container>
   );
