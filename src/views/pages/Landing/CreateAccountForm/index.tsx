@@ -1,5 +1,6 @@
 import React, { FormEvent, useState } from "react";
 import { AiOutlineUser, AiFillLock } from "react-icons/ai";
+import { useHistory } from "react-router-dom";
 //
 import api from "../../../../services/api";
 import ButtonPrimary from "../../../components/ButtonPrimary";
@@ -7,6 +8,8 @@ import InputPrimary from "../../../components/InputPrimary";
 import * as S from "./styles";
 
 const CreateAccountForm: React.FC = () => {
+  const history = useHistory();
+
   const [cpf, setCpf] = useState("");
   const [name, setName] = useState("");
   const [fullName, setFullName] = useState("");
@@ -16,6 +19,9 @@ const CreateAccountForm: React.FC = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (!name || !passwd) return;
+    if (passwd !== passwdConfirm) return;
+
     api
       .post("https://accenture-java-desafio.herokuapp.com/usuarios", {
         cpf,
@@ -23,7 +29,7 @@ const CreateAccountForm: React.FC = () => {
         nome: fullName,
         senha: passwd,
       })
-      .then(() => console.log("Conta criada"))
+      .then(() => history.push("/login"))
       .catch(() => {
         console.log("Erro na criação de conta");
       });
