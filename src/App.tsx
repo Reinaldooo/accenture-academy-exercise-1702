@@ -1,19 +1,16 @@
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 //
+import Routes from "./routes";
 import GlobalStyles from "./styles";
-// import Landing from "./views/pages/Landing";
-// import Login from "./views/pages/Login";
-import ForgotPasswd from "./views/pages/ForgotPasswd";
 
 const App: React.FC = () => {
   return (
     // This fragment will be the redux provider in the future
-    <>
-      {/* <Landing /> */}
-      {/* <Login /> */}
-      <ForgotPasswd />
+    <Router>
+      <Routes />
       <GlobalStyles />
-    </>
+    </Router>
   );
 };
 

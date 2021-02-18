@@ -4,7 +4,6 @@ export const mainPurple: string = "#8c52e5";
 export const mainGreen: string = "#68de5a";
 
 export default createGlobalStyle`
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 * {
   margin: 0;

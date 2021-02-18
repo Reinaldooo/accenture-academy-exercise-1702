@@ -1,7 +1,6 @@
 import React, { FormEvent, useState } from "react";
 import { AiOutlineUser, AiFillLock } from "react-icons/ai";
 //
-import api from "../../../../services/api";
 import ButtonPrimary from "../../../components/ButtonPrimary";
 import InputPrimary from "../../../components/InputPrimary";
 import * as S from "./styles";
@@ -13,16 +12,6 @@ const ForgotPasswdForm: React.FC = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    // api
-    //   .post("https://accenture-java-desafio.herokuapp.com/login", {
-    //     usuario: name,
-    //     senha: passwd,
-    //   })
-    //   .then((res) => console.log(res))
-    //   .catch(() => {
-    //     console.log("Erro na criação de conta");
-    //   });
   };
 
   return (

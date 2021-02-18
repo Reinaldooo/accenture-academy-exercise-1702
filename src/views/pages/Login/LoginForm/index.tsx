@@ -1,5 +1,6 @@
 import React, { FormEvent, useState } from "react";
 import { AiOutlineUser, AiFillLock } from "react-icons/ai";
+import { useHistory } from "react-router-dom";
 //
 import api from "../../../../services/api";
 import ButtonPrimary from "../../../components/ButtonPrimary";
@@ -7,20 +8,30 @@ import InputPrimary from "../../../components/InputPrimary";
 import * as S from "./styles";
 
 const LoginForm: React.FC = () => {
+  const history = useHistory();
   const [name, setName] = useState("");
   const [passwd, setPasswd] = useState("");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (!name || !passwd) return;
+
+    const postData = {
+      usuario: name,
+      senha: passwd,
+    };
+
     api
-      .post("https://accenture-java-desafio.herokuapp.com/login", {
-        usuario: name,
-        senha: passwd,
+      .post("https://accenture-java-desafio.herokuapp.com/login", postData)
+      .then((res) => {
+        console.log(res.data);
+        console.log(res.status);
+        history.push("/dashboard");
       })
-      .then((res) => console.log(res))
-      .catch(() => {
-        console.log("Erro na criação de conta");
+      .catch((e) => {
+        console.log("Erro no login");
+        console.log(e);
       });
   };
 
