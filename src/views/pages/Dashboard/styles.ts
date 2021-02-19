@@ -14,7 +14,7 @@ export const Container = styled.div`
 `;
 
 export const Aside = styled.aside`
-  background-color: red;
+  background-color: #7024e4;
   height: 100vh;
   width: 10rem;
 `;

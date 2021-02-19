@@ -5,13 +5,14 @@ import Landing from "../views/pages/Landing";
 import Login from "../views/pages/Login";
 import Dashboard from "../views/pages/Dashboard";
 import ForgotPasswd from "../views/pages/ForgotPasswd";
+import PrivateRoute from "./PrivateRoute";
 
 const Routes: React.FC = () => (
   <Switch>
     <Route exact path="/" component={Landing} />
     <Route path="/login" component={Login} />
     <Route path="/forgot-passwd" component={ForgotPasswd} />
-    <Route path="/dashboard" component={Dashboard} isPrivate />
+    <PrivateRoute path="/dashboard" component={Dashboard} />
   </Switch>
 );
 

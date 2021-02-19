@@ -23,10 +23,9 @@ const LoginForm: React.FC = () => {
     };
 
     api
-      .post("https://accenture-java-desafio.herokuapp.com/login", postData)
-      .then((res) => {
-        console.log(res.data);
-        console.log(res.status);
+      .post("/login", postData)
+      .then(({ data: { token } }) => {
+        localStorage.setItem("@tokenApp", token);
         history.push("/dashboard");
       })
       .catch((e) => {
